@@ -1,0 +1,14 @@
+doctype 5
+html
+  head
+    if locals.title 
+      title= title
+    else
+      title= "N-Gon Games"
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block header
+  body
+    include includes/header
+    #content
+      block content
+    include includes/footer
