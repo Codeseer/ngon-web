@@ -1,3 +1,8 @@
+size(w,h)
+  width w 
+  height h
+
+
 body
   padding 50px
   font 14px "Lucida Grande", Helvetica, Arial, sans-serif
@@ -10,5 +15,23 @@ input, textarea
   margin-bottom 15px
 
 textarea
-  width 300px
-  height 100px
+  size 300px 200px
+
+.game-thumbnail
+  size 64px 64px
+
+.game-item, .game-thumbnail, .game-text
+  display inline-block
+
+.game-text
+  vertical-align top
+  size 184px 64px
+
+.game-title
+  font-size 16px
+  font-weight bold
+
+.game-description
+  font-size 12px
+  font-style oblique
+  text-align justify

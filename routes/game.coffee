@@ -33,7 +33,7 @@ exports.upload = (req, res) ->
               res.send 'There was an error uploading the game.'
             else              
               files.forEach (file) ->
-                uploadFile = ()->
+                  uploadZipFile = ()->
                   remoteFile = file.replace req.files.game_zip.path + '_unzip/', ''
                   container.addFile {remote: remoteFile, local: file}, (err, uploaded) ->
                     console.log remoteFile + ' uploaded'
@@ -45,18 +45,18 @@ exports.upload = (req, res) ->
                   pngcrush.on 'exit', (code) ->
                     if code != 0
                       console.log 'exit code '+code+' could not compress file ' + file 
-                      uploadFile()
+                        uploadZipFile()
                     else
                       console.log 'Successfuly compressed '+file
                       mvFiles = spawn 'mv', [outFile,file]
                       mvFiles.on 'exit', (code) ->
                         if code != 0
                           console.log 'exit code '+code+' could not overwrite non compressed file'
-                          uploadFile()
+                            uploadZipFile()
                         else
-                          uploadFile()                        
+                            uploadZipFile()                        
                 else
-                  uploadFile()
+                    uploadZipFile()
             res.send container.cdnUri
     else
       res.send 'Unable to unzip your file.'

@@ -2,4 +2,10 @@ extends layout
 include includes/slider
 block content
   h1= title
-  p Welcome to #{title}
+  ul#game-list
+    each game in games
+      li.game-item
+        div.game-thumbnail(style="background-image:url('#{game.cdnUrl}/thumbnail.png');")
+        div.game-text
+          .game-title= game.title
+          .game-description= game.description
