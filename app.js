@@ -1,8 +1,3 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
@@ -29,8 +24,16 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/game/:id', game.index);
+app.get('/game/new', game.new);
+app.post('/game/new', game.upload);
+app.get('/game/play/:id', game.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
+
+//for some reason I have to make javascript better.
+String.prototype.endsWith = function(suffix) {
+    return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
+
