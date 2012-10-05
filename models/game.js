@@ -13,7 +13,7 @@
       type: String,
       required: true
     },
-    gameName: {
+    name: {
       type: String,
       required: true
     },

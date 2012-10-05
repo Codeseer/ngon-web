@@ -2,5 +2,6 @@ extends ../layout
 block content
     #ad-top
     #game
-      iframe(src= game_src)
+      .title= game.name
+      iframe(src= game.cdnUrl+'/index.html')
     #ad-bot

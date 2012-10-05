@@ -9,7 +9,7 @@
     "express": "3.0.0rc4",
     "jade": "*",
     "cloudfiles": "0.3.4",
-    "redis": "0.8.1"
+    "mongoose": "3.2.1"
   },
   "subdomain": "ngon",
   "engines": {

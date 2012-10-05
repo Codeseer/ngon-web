@@ -1,11 +1,14 @@
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , mongoose = require('mongoose');
 
 var game = require('./routes/game');
 
 var app = express();
+
+
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -21,16 +24,19 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler());
+  app.set('db', 'localhost/ngon');
 });
 
 app.get('/', routes.index);
-app.get('/game/new', game.new);
-app.post('/game/new', game.upload);
-app.get('/game/play/:id', game.index);
+app.get('/admin/game/new', game.new);
+app.post('/admin/game/new', game.upload);
+app.get('/game/:name', game.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
+
+mongoose.connect(app.get('db'));
 
 //for some reason I have to make javascript better.
 String.prototype.endsWith = function(suffix) {

@@ -5,7 +5,8 @@ block content
   ul#game-list
     each game in games
       li.game-item
-        div.game-thumbnail(style="background-image:url('#{game.cdnUrl}/thumbnail.png');")
-        div.game-text
-          .game-title= game.title
-          .game-description= game.description
+        a(href='/game/#{game.name}')
+          div.game-thumbnail(style="background-image:url('#{game.cdnUrl}/thumbnail.png');")
+          div.game-text
+            .game-title= game.name
+            .game-description= game.description

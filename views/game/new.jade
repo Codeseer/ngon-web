@@ -1,18 +1,20 @@
 extends ../layout
 block content
-  form(action="/game/new", method="POST", enctype="multipart/form-data")    
+  form(action="", method="POST", enctype="multipart/form-data")
+
       label(for='name') Game Name (50 char or less)
       input(type='text', name='name', id='name', maxLength='50')
-      label(for='game_zip') Game .zip File
-      input(type='file', name='game_zip', id='game_zip')
+
+      label(for='zip') Game .zip File
+      input(type='file', name='zip', id='zip')
       
-      label(for='game_thumbnail') Game Thumbnail Image 64x64
-      input(type='file', name='game_thumbnail', id='game_thumbnail')
+      label(for='thumbnail') Game Thumbnail Image 64x64
+      input(type='file', name='thumbnail', id='thumbnail')
 
-      label(for='game_banner') Game Banner Image 500x400
-      input(type='file', name='game_banner', id='game_banner')
+      label(for='banner') Game Banner Image 500x400
+      input(type='file', name='banner', id='banner')
 
-      label(for='game_description') Game Description (140 char or less)
-      textarea(name='game_description', id='game_description', maxLength='140')
+      label(for='description') Game Description (140 char or less)
+      textarea(name='description', id='description', maxLength='140')
 
       button(type='submit') Create
