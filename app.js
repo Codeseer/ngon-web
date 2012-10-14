@@ -24,7 +24,7 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler());
-  app.set('db', 'localhost/ngon');
+  app.set('db', 'ngon:Y4sfqjZz@alex.mongohq.com:10024/ngon');
 });
 
 app.get('/', routes.index);
