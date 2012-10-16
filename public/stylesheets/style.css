@@ -1,9 +1,41 @@
-body{padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}
-a{color:#00b7f0}
-input,textarea{display:block;margin-bottom:15px}
-textarea{width:300px;height:200px}
-.game-thumbnail{width:64px;height:64px;background-size:64px 64px;background-repeat:no-repeat}
-.game-item,.game-thumbnail,.game-text{display:inline-block}
-.game-text{vertical-align:top;width:184px;height:64px}
-.game-title{font-size:16px;font-weight:bold}
-.game-description{font-size:12px;font-style:oblique;text-align:justify}
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7f0;
+}
+input,
+textarea {
+  display: block;
+  margin-bottom: 15px;
+}
+textarea {
+  width: 300px;
+  height: 200px;
+}
+.game-thumbnail {
+  width: 64px;
+  height: 64px;
+  background-size: 64px 64px;
+  background-repeat: no-repeat;
+}
+.game-item,
+.game-thumbnail,
+.game-text {
+  display: inline-block;
+}
+.game-text {
+  vertical-align: top;
+  width: 184px;
+  height: 64px;
+}
+.game-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+.game-description {
+  font-size: 12px;
+  font-style: oblique;
+  text-align: justify;
+}
